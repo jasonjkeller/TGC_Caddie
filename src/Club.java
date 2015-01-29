@@ -4,6 +4,11 @@
 
 
 public class Club {
+
+    /** test **/
+    public static void main(String[] args) {
+        
+    }
 }
 
 // setClub

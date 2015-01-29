@@ -4,4 +4,8 @@
 
 
 public class ShotAnalyzer {
+    public double adjustForPin() {
+        return 1;
+    }
+    
 }

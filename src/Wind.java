@@ -4,4 +4,9 @@
 
 // direction, speed
 public class Wind {
+    
+    /** test **/
+    public static void main(String[] args) {
+        
+    }
 }
