@@ -4,49 +4,65 @@
 
 // rough type, percentages
 public class Lie {
-    private String type;
-    private double lo;
-    private double hi;
-    private double mid;
-
-    public double getMid() {
-        return mid;
-    }
-
-    public void setMid() {
-        this.mid = getLo() + (getHi() - getLo()) / 2;
-    }
-
-    public double getHi() {
-        return hi;
-    }
-
-    public void setHi(double hi) {
-        this.hi = hi;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public double getLo() {
-        return lo;
-    }
-
-    public void setLo(double lo) {
-        this.lo = lo;
+    
+    public Lie() {
+        setActual(-1);
     }
     
-    /** test **/
+    private int min;
+    private int max;
+    private double mid;
+    private double actual;
+
+    public int getMin() {
+        return min;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
+    public void setMax(int max) {
+        this.max = max;
+    }
+
+    public double getMid() {
+        return getMin() + (getMax() - getMin()) / 2.0;
+    }
+
+    public double getActual() {
+        return actual;
+    }
+
+    public void setActual(double actual) {
+        this.actual = actual;
+    }
+    
+    public double getLieModifier() {
+        if (getActual() == -1) {
+            return getMid();
+        } else {
+            return getActual();
+        }
+    }
+
+    /** test class **/
     public static void main(String[] args) {
+        double lieMod;
+        
         Lie lie = new Lie();
-        lie.setHi(100);
-        lie.setLo(80);
-        lie.setMid();
-        System.out.println(lie.getMid());
+        lie.setMax(100);
+        lie.setMin(81);
+        
+        lieMod = lie.getLieModifier();
+        System.out.println("Mid: " + lieMod);
+        
+        lie.setActual(87);
+        lieMod = lie.getLieModifier();
+        System.out.println("Actual: " + lieMod);
     }
 }
