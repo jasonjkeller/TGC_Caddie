@@ -4,9 +4,9 @@ import java.util.Comparator;
  * Created by jasonjkeller on 1/31/15.
  */
 public class Loft implements Comparable<Loft>{
-    String club;
-    int loft;
-    double distance;
+    private String club;
+    private int loft;
+    private double distance;
 
     public Loft(String c, int l, double d) {
         setClub(c);

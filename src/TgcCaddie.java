@@ -9,39 +9,27 @@ public class TgcCaddie {
         int lieMin;
         int lieMax;
         int lieActual;
-        
-        // logic variables
-        Pin pin;
-        Lie lie;
-        double totalPinDistance;
-        double lieModifier;
+        // needs Wind still
         
         /* begin user input */
         pinHeight = -17;
-        pinDistance = 121;
+        pinDistance = 221;
         lieMin = 81;
         lieMax = 100;
         lieActual = -1;
+        // needs Wind still
         /* end user input */
 
-        // set up Pin info
-        pin = new Pin();
-        pin.setHeight(pinHeight);
-        pin.setDistance(pinDistance);
-        totalPinDistance = pin.calcTotalDistance();
-        System.out.println("Total Pin Distance: " + String.format("%.2f", totalPinDistance));
+        // logic variables
+        ShotAnalyzer shotAnalyzer;
+        BagOfClubs bagOfClubs;
+        double shotDist;
+        String clubToUse;
 
-        // set up Lie info
-        lie = new Lie();
-        lie.setMin(lieMin);
-        lie.setMax(lieMax);
-//        lie.setActual(lieActual);
-        lieModifier = lie.getLieModifier();
-        System.out.println("Lie Modifier: " + lieModifier);
-        
-        
-        
-        System.out.println("Lie + Pin: " + String.format("%.2f", lieModifier*totalPinDistance/100));
-
+        shotAnalyzer = new ShotAnalyzer(pinHeight, pinDistance, lieMin, lieMax, lieActual); // needs Wind still
+        bagOfClubs = new BagOfClubs();
+        shotDist = shotAnalyzer.analyzeShot();
+        clubToUse = bagOfClubs.getClub(shotDist);
+        System.out.println(clubToUse);
     }
 }

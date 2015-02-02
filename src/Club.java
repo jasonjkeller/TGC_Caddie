@@ -8,6 +8,7 @@ import java.util.Collections;
 
 
 public class Club {
+    // might want to narrow the down to loft/deloft +-2, 3&4 probably not used much, would simplify setting up Club objects
     private static final int BASE0 =  0;
     private static final int LOFT1 =  1;
     private static final int LOFT2 =  2;
