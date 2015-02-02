@@ -49,7 +49,7 @@ public class BagOfClubs {
             }
         }
         // some string to be displayed to user
-        return "CHOSEN CLUB FOR " + yardage + " YARDS: " + bestLoft.toString() + " Within: " + currentDiff;
+        return "CHOSEN CLUB FOR " + yardage + " YARDS: " + bestLoft.toString() + " Within: " + diff;
     }
 
     public List<Loft> getLoftList() {
@@ -63,7 +63,7 @@ public class BagOfClubs {
         for (Loft l: list) {
             System.out.println(l);
         }
-        String chosenShot = bag.getClub(128);
+        String chosenShot = bag.getClub(300);
         System.out.println(chosenShot);
     }
 }
