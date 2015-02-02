@@ -4,16 +4,15 @@ import java.util.Comparator;
  * Created by jasonjkeller on 1/31/15.
  */
 public class Loft implements Comparable<Loft>{
-    
+    String club;
+    int loft;
+    double distance;
+
     public Loft(String c, int l, double d) {
         setClub(c);
         setLoft(l);
         setDistance(d);
     }
-    
-    String club;
-    int loft;
-    double distance;
 
     public String getClub() {
         return club;

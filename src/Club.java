@@ -21,9 +21,8 @@ public class Club {
 
     private List<Loft> lofts;
 
-    public Club(String name, double base, 
-                double l1, double l2, double l3, double l4, 
-                double d1, double d2, double d3, double d4) {
+    public Club(String name, double base, double l1, double l2, double l3, 
+                double l4, double d1, double d2, double d3, double d4) {
         Loft baseLoft = new Loft(name, BASE0, base);
         Loft loft1 = new Loft(name, LOFT1, l1);
         Loft loft2 = new Loft(name, LOFT2, l2);

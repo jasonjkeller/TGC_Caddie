@@ -32,7 +32,24 @@ public class BagOfClubs {
     // Collections.sort(loftList);
 
     public String getClub(double yardage) {
-         return "";
+        // sort loftList
+        Collections.sort(loftList);
+        // iterate through loftList as long as distance is decreasing to find closest match
+        // as soon as the difference between club distances starts to increase abort search
+        double diff = 100000;
+        double currentDiff = 100000;
+        Loft bestLoft = null;
+        for (Loft loft : loftList) {
+            currentDiff = Math.abs(yardage - loft.getDistance());
+            if (currentDiff < diff) {
+                diff = currentDiff;
+                bestLoft = loft;
+            } else {
+                break;
+            }
+        }
+        // some string to be displayed to user
+        return "CHOSEN CLUB FOR " + yardage + " YARDS: " + bestLoft.toString() + " Within: " + currentDiff;
     }
 
     public List<Loft> getLoftList() {
@@ -43,10 +60,10 @@ public class BagOfClubs {
     public static void main(String[] args) {
         BagOfClubs bag = new BagOfClubs();
         List<Loft> list = bag.getLoftList();
-//        Collections.sort(loftList);
         for (Loft l: list) {
             System.out.println(l);
         }
-
+        String chosenShot = bag.getClub(128);
+        System.out.println(chosenShot);
     }
 }
