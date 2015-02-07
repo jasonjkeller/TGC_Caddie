@@ -2,6 +2,7 @@
  * Created by jasonjkeller on 1/16/15.
  */
 
+
 public class Wind {
     public static enum Direction {N, S, E, W, NE, NW, SE, SW}
     private int speed;
@@ -67,7 +68,7 @@ public class Wind {
         return getWindMod();
     }
 
-    /** test **/
+    /** class test **/
     public static void main(String[] args) {
         Wind wind = new Wind();
         wind.setSpeed(8);

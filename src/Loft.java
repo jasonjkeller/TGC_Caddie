@@ -1,8 +1,8 @@
-import java.util.Comparator;
-
 /**
  * Created by jasonjkeller on 1/31/15.
  */
+
+
 public class Loft implements Comparable<Loft>{
     private String club;
     private int loft;
@@ -53,7 +53,7 @@ public class Loft implements Comparable<Loft>{
             return 0;
     }
 
-    /** test **/
+    /** class test **/
     public static void main(String[] args) {
 
     }

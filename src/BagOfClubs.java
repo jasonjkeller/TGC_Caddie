@@ -2,6 +2,7 @@
  * Created by jasonjkeller on 1/31/15.
  */
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
@@ -96,18 +97,8 @@ public class BagOfClubs {
         // sort loftList
         Collections.sort(loftList);
     }
-    
-    // iterate through each clubs loftList adding it's Loft objects to a sorted data structure (key is Loft distance)
-
-    // alternatives
-    // matrix for searching NOPE
-    // hashmap to retrieve club info from NOPE
-    
-    // Collections.sort(loftList);
 
     public String getClub(double yardage) {
-//        // sort loftList
-//        Collections.sort(loftList);
         // iterate through loftList as long as distance is decreasing to find closest match
         // as soon as the difference between club distances starts to increase abort search
         double diff = 100000;
@@ -132,7 +123,7 @@ public class BagOfClubs {
         return loftList;
     }
 
-    /** test **/
+    /** class test **/
     public static void main(String[] args) {
         BagOfClubs bag = new BagOfClubs();
         List<Loft> list = bag.getLoftList();

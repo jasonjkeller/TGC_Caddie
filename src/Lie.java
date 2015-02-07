@@ -2,7 +2,7 @@
  * Created by jasonjkeller on 1/16/15.
  */
 
-// rough type, percentages
+
 public class Lie {
     
     public Lie() {
@@ -50,7 +50,7 @@ public class Lie {
         }
     }
 
-    /** test class **/
+    /** class test **/
     public static void main(String[] args) {
         double lieMod;
         

@@ -2,10 +2,10 @@
  * Created by jasonjkeller on 1/16/15.
  */
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
-
 
 public class Club {
     // might want to narrow the down to loft/deloft +-2, 3&4 probably not used much, would simplify setting up Club objects
@@ -51,7 +51,7 @@ public class Club {
         return lofts;
     }
 
-    /** test **/
+    /** class test **/
     public static void main(String[] args) {
         Club club = new Club("9 iron", 132, 114, 96.4, 79.2, 63.4, 165, 186, 176, 83.2);
         List<Loft> loftList = club.getLofts();

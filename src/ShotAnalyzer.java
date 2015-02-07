@@ -1,21 +1,15 @@
 /**
  * Created by jasonjkeller on 1/31/15.
  */
+
+
 public class ShotAnalyzer {
-    
-    // need to move logic from TgcCaddie into here
     // logic variables
     private Pin pin;
     private Lie lie;
     private Wind wind;
-//    private double totalPinDistance;
-//    private double lieModifier;
-//    private double windModifier;
-//    private double finalResult;
 
     public ShotAnalyzer(int pinHeight, int pinDistance, int lieMin, int lieMax, int lieActual, int windSpeed, Wind.Direction windDir) {
-        // needs Wind still
-        
         // set up Pin info
         pin = new Pin();
         pin.setHeight(pinHeight);
@@ -56,7 +50,7 @@ public class ShotAnalyzer {
         return finalResult;
     }
 
-    /** test **/
+    /** class test **/
     public static void main(String[] args) {
 
     }
