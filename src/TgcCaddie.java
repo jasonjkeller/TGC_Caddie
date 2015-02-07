@@ -12,10 +12,10 @@ public class TgcCaddie {
         // needs Wind still
         
         /* begin user input */
-        pinHeight = -17;
-        pinDistance = 221;
-        lieMin = 81;
-        lieMax = 100;
+        pinHeight = 5;
+        pinDistance = 127;
+        lieMin = 89;
+        lieMax = 97;
         lieActual = -1;
         // needs Wind still
         /* end user input */
