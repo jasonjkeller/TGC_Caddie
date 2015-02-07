@@ -7,11 +7,13 @@ public class ShotAnalyzer {
     // logic variables
     private Pin pin;
     private Lie lie;
-    private double totalPinDistance;
-    private double lieModifier;
-    private double finalResult;
+    private Wind wind;
+//    private double totalPinDistance;
+//    private double lieModifier;
+//    private double windModifier;
+//    private double finalResult;
 
-    public ShotAnalyzer(int pinHeight, int pinDistance, int lieMin, int lieMax, int lieActual) {
+    public ShotAnalyzer(int pinHeight, int pinDistance, int lieMin, int lieMax, int lieActual, int windSpeed, Wind.Direction windDir) {
         // needs Wind still
         
         // set up Pin info
@@ -23,26 +25,34 @@ public class ShotAnalyzer {
         lie = new Lie();
         lie.setMin(lieMin);
         lie.setMax(lieMax);
-//        lie.setActual(lieActual);
-
-
+        lie.setActual(lieActual);
+        
+        // set up Wind info
+        wind = new Wind();
+        wind.setSpeed(windSpeed);
+        wind.setDirection(windDir);
     }
     
     public double analyzeShot() {
+        double totalPinDistance;
+        double lieModifier;
+        double windModifier;
+        double finalResult;
+
         totalPinDistance = pin.calcTotalDistance();
         System.out.println("Total Pin Distance: " + String.format("%.2f", totalPinDistance));
 
         lieModifier = lie.getLieModifier();
         System.out.println("Lie Modifier: " + lieModifier);
-
-
-
+        
         System.out.println("Lie + Pin: " + String.format("%.2f", lieModifier*totalPinDistance/100));
 
-        finalResult = lieModifier*totalPinDistance/100; // not correct, temporary for testing
-        // do math related to combining distances for various classes
-        
-        // needs Wind still
+        windModifier = wind.getWindModifier();
+        System.out.println("Wind Modifier " + String.format("%.2f", windModifier));
+
+        finalResult = windModifier + (lieModifier*totalPinDistance/100); // not correct, temporary for testing
+        System.out.println("Final Result " + String.format("%.2f", finalResult));
+
         return finalResult;
     }
 

@@ -125,7 +125,7 @@ public class BagOfClubs {
             }
         }
         // some string to be displayed to user
-        return "CHOSEN CLUB FOR " + yardage + " YARDS: " + bestLoft.toString() + " Within: " + diff;
+        return "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
     }
 
     public List<Loft> getLoftList() {

@@ -38,6 +38,6 @@ public class Pin {
         pin.setDistance(d);
         
         totalDistance = pin.calcTotalDistance();
-        System.out.println("Total Distance: " + String.format( "%.2f", totalDistance ));
+        System.out.println("Total Distance: " + String.format("%.2f", totalDistance));
     }
 }

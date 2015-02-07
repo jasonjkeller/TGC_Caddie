@@ -1,6 +1,8 @@
 /**
  * Created by jasonjkeller on 1/16/15.
  */
+
+
 public class TgcCaddie {
     public static void main(String[] args) {
         // user supplied info
@@ -9,15 +11,17 @@ public class TgcCaddie {
         int lieMin;
         int lieMax;
         int lieActual;
-        // needs Wind still
-        
+        int windSpeed;
+        Wind.Direction windDir;
+
         /* begin user input */
         pinHeight = 5;
         pinDistance = 127;
         lieMin = 89;
         lieMax = 97;
         lieActual = -1;
-        // needs Wind still
+        windSpeed = 8;
+        windDir = Wind.Direction.SE;
         /* end user input */
 
         // logic variables
@@ -26,7 +30,7 @@ public class TgcCaddie {
         double shotDist;
         String clubToUse;
 
-        shotAnalyzer = new ShotAnalyzer(pinHeight, pinDistance, lieMin, lieMax, lieActual); // needs Wind still
+        shotAnalyzer = new ShotAnalyzer(pinHeight, pinDistance, lieMin, lieMax, lieActual, windSpeed, windDir);
         bagOfClubs = new BagOfClubs();
         shotDist = shotAnalyzer.analyzeShot();
         clubToUse = bagOfClubs.getClub(shotDist);
