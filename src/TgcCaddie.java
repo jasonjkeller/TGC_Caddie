@@ -15,13 +15,13 @@ public class TgcCaddie {
         Wind.Direction windDir;
 
         /* begin user input */
-        pinHeight = 5;
-        pinDistance = 127;
-        lieMin = 89;
-        lieMax = 97;
+        pinHeight = 3;
+        pinDistance = 158;
+        lieMin = 84;
+        lieMax = 94;
         lieActual = -1;
-        windSpeed = 8;
-        windDir = Wind.Direction.SE;
+        windSpeed = 6;
+        windDir = Wind.Direction.W;
         /* end user input */
 
         // logic variables

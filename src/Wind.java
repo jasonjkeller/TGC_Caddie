@@ -38,10 +38,10 @@ public class Wind {
         
         switch (direction) {
             case N: 
-                setWindMod(getSpeed() * windFactor);
+                setWindMod(getSpeed() * (- windFactor));
                 break;
             case S:
-                setWindMod(getSpeed() * (- windFactor));
+                setWindMod(getSpeed() * windFactor);
                 break;
             case E:
                 setWindMod(0);
@@ -50,16 +50,16 @@ public class Wind {
                 setWindMod(0);
                 break;
             case NE:
-                setWindMod(getSpeed() * windFactor);
+                setWindMod(getSpeed() * (- windFactor));
                 break;
             case NW:
-                setWindMod(getSpeed() * windFactor);
+                setWindMod(getSpeed() * (- windFactor));
                 break;
             case SE:
-                setWindMod(getSpeed() * (- windFactor));
+                setWindMod(getSpeed() * windFactor);
                 break;
             case SW:
-                setWindMod(getSpeed() * (- windFactor));
+                setWindMod(getSpeed() * windFactor);
                 break;
             default:
                 setWindMod(0);
