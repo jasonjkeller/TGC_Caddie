@@ -29,8 +29,8 @@ public class TgcCaddie {
         BagOfClubs bagOfClubs;
         double shotDist;
 //        String clubToUse;
-        String[] clubsToUse;
-//        Loft[] clubsToUse;
+//        String[] clubsToUse;
+        Loft[] clubsToUse;
         Lie lie;
         double lieModifier;
 
@@ -47,8 +47,8 @@ public class TgcCaddie {
         System.out.println("Lie Modifier: " + lieModifier);
 
         clubsToUse = bagOfClubs.getClub(shotDist, lieModifier);
-        for (String club : clubsToUse)
-            System.out.println(club);
+        for (Loft club : clubsToUse)
+            System.out.println(club + ", Difference: " + String.format("%.2f", club.getDifference()));
 //        clubsToUse = bagOfClubs.getClub(shotDist, lieModifier);
 //        System.out.println(clubsToUse[0]);
     }

@@ -7,11 +7,14 @@ public class Loft implements Comparable<Loft>{
     private String club;
     private int loft;
     private double distance;
+    private double difference;
+    private static final double DIFF = 99999;
 
     public Loft(String c, int l, double d) {
         setClub(c);
         setLoft(l);
         setDistance(d);
+        setDifference(DIFF);
     }
 
     public String getClub() {
@@ -36,6 +39,14 @@ public class Loft implements Comparable<Loft>{
 
     public void setDistance(double distance) {
         this.distance = distance;
+    }
+    
+    public double getDifference() {
+        return difference;
+    }
+
+    public void setDifference(double difference) {
+        this.difference = difference;
     }
 
     @Override

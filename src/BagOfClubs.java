@@ -122,11 +122,11 @@ public class BagOfClubs {
 //        return "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
 //    }
     
-    public String[] getClub(double yardage, double lie) {
+    public Loft[] getClub(double yardage, double lie) {
         // iterate through loftList as long as distance is decreasing to find closest match
         // as soon as the difference between club distances starts to increase abort search
         int numOfResults = 5;
-        String[] results = new String[numOfResults];
+        Loft[] results = new Loft[numOfResults];
         double diff = 100000;
         double currentDiff;
         Loft bestLoft = null;
@@ -136,8 +136,9 @@ public class BagOfClubs {
             if (currentDiff < diff) {
                 diff = currentDiff;
                 bestLoft = loft;
-//                System.out.println();
-                results[i%numOfResults] = "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
+                bestLoft.setDifference(diff);
+//                results[i%numOfResults] = "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
+                results[i%numOfResults] = bestLoft;
                 i++;
             } else if (currentDiff == diff) {
                 // do nothing
@@ -148,9 +149,8 @@ public class BagOfClubs {
         
         // instead of string would like for this to return an array of the top 3-5 results, store them using modulo
 //        String result = "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
-//        String result = "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
-//
 //        results[0] = result;
+        
         // some string to be displayed to user
         return results;
     }
@@ -170,8 +170,9 @@ public class BagOfClubs {
             System.out.println(l);
         }
 //        String chosenShot = bag.getClub(246, lieModifier);
-        String[] chosenShots = bag.getClub(246, lieModifier);
+        Loft[] chosenShots = bag.getClub(246, lieModifier);
 //        System.out.println(chosenShot);
-        System.out.println(chosenShots[0]);
+        for (Loft loft : chosenShots)
+            System.out.println(loft);
     }
 }
