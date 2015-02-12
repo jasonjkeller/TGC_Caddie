@@ -15,10 +15,10 @@ public class TgcCaddie {
         Wind.Direction windDir;
 
         /* begin user input */
-        pinHeight = 3;
-        pinDistance = 158;
-        lieMin = 84;
-        lieMax = 94;
+        pinHeight = 13;
+        pinDistance = 137;
+        lieMin = 99;
+        lieMax = 100;
         lieActual = -1;
         windSpeed = 6;
         windDir = Wind.Direction.N;
@@ -28,7 +28,9 @@ public class TgcCaddie {
         ShotAnalyzer shotAnalyzer;
         BagOfClubs bagOfClubs;
         double shotDist;
-        String clubToUse;
+//        String clubToUse;
+        String[] clubsToUse;
+//        Loft[] clubsToUse;
         Lie lie;
         double lieModifier;
 
@@ -44,7 +46,10 @@ public class TgcCaddie {
         lieModifier = lie.getLieModifier();
         System.out.println("Lie Modifier: " + lieModifier);
 
-        clubToUse = bagOfClubs.getClub(shotDist, lieModifier);
-        System.out.println(clubToUse);
+        clubsToUse = bagOfClubs.getClub(shotDist, lieModifier);
+        for (String club : clubsToUse)
+            System.out.println(club);
+//        clubsToUse = bagOfClubs.getClub(shotDist, lieModifier);
+//        System.out.println(clubsToUse[0]);
     }
 }

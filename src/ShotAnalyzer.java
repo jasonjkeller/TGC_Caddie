@@ -29,10 +29,10 @@ public class ShotAnalyzer {
         System.out.println("Pin Distance + Height: " + String.format("%.2f", totalPinDistance));
 
         windModifier = wind.getWindModifier();
-        System.out.println("Wind Modifier " + String.format("%.2f", windModifier));
+        System.out.println("Wind Modifier: " + String.format("%.2f", windModifier));
 
         finalResult = windModifier + totalPinDistance;
-        System.out.println("Pin Distance + Height + Wind " + String.format("%.2f", finalResult));
+        System.out.println("Pin Distance + Height + Wind: " + String.format("%.2f", finalResult));
 
         return finalResult;
     }

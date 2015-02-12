@@ -98,17 +98,47 @@ public class BagOfClubs {
         Collections.sort(loftList);
     }
 
-    public String getClub(double yardage, double lie) {
+//    public String getClub(double yardage, double lie) {
+//        // iterate through loftList as long as distance is decreasing to find closest match
+//        // as soon as the difference between club distances starts to increase abort search
+//        double diff = 100000;
+//        double currentDiff;
+//        Loft bestLoft = null;
+//        for (Loft loft : loftList) {
+//            currentDiff = Math.abs(yardage - (loft.getDistance() * lie));
+//            if (currentDiff < diff) {
+//                diff = currentDiff;
+//                bestLoft = loft;
+//            } else if (currentDiff == diff) {
+//                // do nothing
+//            } else {
+//                break;
+//            }
+//        }
+//        
+//        // instead of string would like for this to return an array of the top 3-5 results, store them using modulo
+//        
+//        // some string to be displayed to user
+//        return "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
+//    }
+    
+    public String[] getClub(double yardage, double lie) {
         // iterate through loftList as long as distance is decreasing to find closest match
         // as soon as the difference between club distances starts to increase abort search
+        int numOfResults = 5;
+        String[] results = new String[numOfResults];
         double diff = 100000;
         double currentDiff;
         Loft bestLoft = null;
+        int i = 0;
         for (Loft loft : loftList) {
             currentDiff = Math.abs(yardage - (loft.getDistance() * lie));
             if (currentDiff < diff) {
                 diff = currentDiff;
                 bestLoft = loft;
+//                System.out.println();
+                results[i%numOfResults] = "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
+                i++;
             } else if (currentDiff == diff) {
                 // do nothing
             } else {
@@ -117,9 +147,12 @@ public class BagOfClubs {
         }
         
         // instead of string would like for this to return an array of the top 3-5 results, store them using modulo
-        
+//        String result = "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
+//        String result = "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
+//
+//        results[0] = result;
         // some string to be displayed to user
-        return "CHOSEN CLUB FOR " + String.format("%.2f", yardage) + " YARDS: " + bestLoft.toString() + " Within: " + String.format("%.2f", diff);
+        return results;
     }
 
     public List<Loft> getLoftList() {
@@ -136,7 +169,9 @@ public class BagOfClubs {
         for (Loft l: list) {
             System.out.println(l);
         }
-        String chosenShot = bag.getClub(246, lieModifier);
-        System.out.println(chosenShot);
+//        String chosenShot = bag.getClub(246, lieModifier);
+        String[] chosenShots = bag.getClub(246, lieModifier);
+//        System.out.println(chosenShot);
+        System.out.println(chosenShots[0]);
     }
 }
