@@ -21,7 +21,7 @@ public class TgcCaddie {
         lieMax = 94;
         lieActual = -1;
         windSpeed = 6;
-        windDir = Wind.Direction.W;
+        windDir = Wind.Direction.N;
         /* end user input */
 
         // logic variables
@@ -29,10 +29,21 @@ public class TgcCaddie {
         BagOfClubs bagOfClubs;
         double shotDist;
         String clubToUse;
+        Lie lie;
+        double lieModifier;
 
-        shotAnalyzer = new ShotAnalyzer(pinHeight, pinDistance, lieMin, lieMax, lieActual, windSpeed, windDir);
+        shotAnalyzer = new ShotAnalyzer(pinHeight, pinDistance, windSpeed, windDir);
         bagOfClubs = new BagOfClubs();
         shotDist = shotAnalyzer.analyzeShot();
+
+        // set up Lie info
+        lie = new Lie();
+        lie.setMin(lieMin);
+        lie.setMax(lieMax);
+        lie.setActual(lieActual);
+        lieModifier = lie.getLieModifier();
+        System.out.println("Lie Modifier: " + lieModifier);
+
         clubToUse = bagOfClubs.getClub(shotDist);
         System.out.println(clubToUse);
     }

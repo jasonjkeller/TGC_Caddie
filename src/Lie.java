@@ -44,9 +44,9 @@ public class Lie {
     
     public double getLieModifier() {
         if (getActual() == -1) {
-            return getMid();
+            return (getMid() / 100);
         } else {
-            return getActual();
+            return (getActual() / 100);
         }
     }
 
