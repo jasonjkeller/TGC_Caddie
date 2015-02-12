@@ -44,7 +44,7 @@ public class TgcCaddie {
         lieModifier = lie.getLieModifier();
         System.out.println("Lie Modifier: " + lieModifier);
 
-        clubToUse = bagOfClubs.getClub(shotDist);
+        clubToUse = bagOfClubs.getClub(shotDist, lieModifier);
         System.out.println(clubToUse);
     }
 }
