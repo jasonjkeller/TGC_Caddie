@@ -3,6 +3,8 @@
  */
 
 
+import java.util.List;
+
 public class TgcCaddie {
     public static void main(String[] args) {
         // user supplied info
@@ -15,8 +17,8 @@ public class TgcCaddie {
         Wind.Direction windDir;
 
         /* begin user input */
-        pinHeight = 13;
-        pinDistance = 137;
+        pinHeight = -13;
+        pinDistance = 145;
         lieMin = 99;
         lieMax = 100;
         lieActual = -1;
@@ -28,9 +30,7 @@ public class TgcCaddie {
         ShotAnalyzer shotAnalyzer;
         BagOfClubs bagOfClubs;
         double shotDist;
-//        String clubToUse;
-//        String[] clubsToUse;
-        Loft[] clubsToUse;
+        List<Loft> clubsToUse;
         Lie lie;
         double lieModifier;
 
@@ -49,7 +49,5 @@ public class TgcCaddie {
         clubsToUse = bagOfClubs.getClub(shotDist, lieModifier);
         for (Loft club : clubsToUse)
             System.out.println(club + ", Difference: " + String.format("%.2f", club.getDifference()));
-//        clubsToUse = bagOfClubs.getClub(shotDist, lieModifier);
-//        System.out.println(clubsToUse[0]);
     }
 }

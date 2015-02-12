@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 /**
  * Created by jasonjkeller on 1/31/15.
  */
@@ -8,13 +10,13 @@ public class Loft implements Comparable<Loft>{
     private int loft;
     private double distance;
     private double difference;
-    private static final double DIFF = 99999;
+    private static final double DIFF_INIT = 99999;
 
     public Loft(String c, int l, double d) {
         setClub(c);
         setLoft(l);
         setDistance(d);
-        setDifference(DIFF);
+        setDifference(DIFF_INIT);
     }
 
     public String getClub() {
